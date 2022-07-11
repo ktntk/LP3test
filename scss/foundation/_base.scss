@@ -1,0 +1,38 @@
+@use "../global" as g;
+
+// 全体に対して
+a{
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+}
+
+.inner{
+  width: 90%;
+  margin: 0 auto;
+}
+
+// ヘッダー設定
+.header{
+  display: flex;
+  padding: 1rem 0;
+    &_text{
+      color:g.$cBluLight;
+      font-weight: bold;
+      letter-spacing: 0.2rem;
+    }
+  }
+
+nav{
+  margin: 0 auto;
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top_img{
+  height: 80vh;
+  width: 100%;
+}
