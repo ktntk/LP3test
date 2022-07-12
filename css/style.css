@@ -177,12 +177,16 @@ li {
   margin: 0 auto;
 }
 
+section {
+  margin-bottom: 5%;
+}
+
 .header {
   display: flex;
   padding: 1rem 0;
 }
 .header_text {
-  color: #75a9ff;
+  color: #129DA4;
   font-weight: bold;
   letter-spacing: 0.2rem;
 }
@@ -197,4 +201,59 @@ nav {
 .top_img {
   height: 80vh;
   width: 100%;
+}
+
+.vision {
+  display: flex;
+}
+
+.vision_left {
+  width: 50%;
+}
+
+.vision_left_txt {
+  display: flex;
+  line-height: 2.5rem;
+}
+.vision_left_txt small {
+  border-left: solid 3px;
+  margin-right: 2%;
+}
+
+.vision_img {
+  height: 55vh;
+  width: auto;
+  margin-top: 5%;
+}
+
+.vision_right {
+  width: 50%;
+  margin-top: 10%;
+  text-align: end;
+}
+
+.vision_ttl {
+  color: #129DA4;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  margin-bottom: 15px;
+}
+.vision_ttl_lead {
+  font-weight: bold;
+  line-height: 2rem;
+  color: #129DA4;
+}
+
+.vision_desc {
+  font-size: 1rem;
+  line-height: 5rem;
+}
+
+.bar {
+  margin: 5% 0 5% auto;
+  flex-direction: row-reverse;
+  width: 35%;
+  height: 0.2rem;
+  background-color: #129DA4;
 }

@@ -14,6 +14,10 @@ li{
   margin: 0 auto;
 }
 
+section{
+  margin-bottom: 5%;
+}
+
 // ヘッダー設定
 .header{
   display: flex;
@@ -35,4 +39,58 @@ nav{
 .top_img{
   height: 80vh;
   width: 100%;
+}
+
+// VISION
+.vision{
+  display: flex;
+}
+
+.vision_left{
+  width: 50%;
+}
+
+.vision_left_txt{
+  display: flex;
+  line-height: 2.5rem;
+  small {
+    border-left: solid 3px;
+    margin-right: 2%;
+}
+}
+
+.vision_img{
+  height: 55vh;
+  width: auto;
+  margin-top: 5%;
+}
+
+.vision_right{
+  width: 50%;
+  margin-top: 10%;
+  text-align: end;
+}
+
+.vision_ttl{
+  color: g.$cBluLight;
+  @include g.title;
+  margin-bottom: 15px;
+    &_lead{
+      font-weight: bold;
+      line-height: 2rem;
+      color: g.$cBluLight;
+  }
+}
+
+.vision_desc{
+  font-size: 1rem;
+  line-height: 5rem;
+}
+
+.bar{
+  margin: 5% 0 5% auto;
+  flex-direction: row-reverse;
+  width: 35%;
+  height: 0.2rem;
+  background-color: g.$cBluLight;
 }

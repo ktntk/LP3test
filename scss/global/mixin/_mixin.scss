@@ -1,1 +1,7 @@
-@use "../setting" as s;
+@use "../setting" as *;
+
+@mixin title {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
