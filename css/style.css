@@ -237,6 +237,8 @@ nav {
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 0.2rem;
+  text-align: center;
+  margin-bottom: 5%;
   margin-bottom: 15px;
 }
 .vision_ttl_lead {
@@ -256,4 +258,224 @@ nav {
   width: 35%;
   height: 0.2rem;
   background-color: #129DA4;
+}
+
+#service {
+  position: relative;
+  margin-top: 15%;
+  margin-bottom: 10%;
+}
+
+.service_ttl {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.service_img1 {
+  width: 50%;
+  margin-left: 50%;
+}
+
+.service_bg1 {
+  top: 10%;
+  position: absolute;
+  left: 22%;
+  width: 65%;
+  height: 42vh;
+  z-index: -1;
+  background-color: #F3F3F3;
+}
+
+.text_box1 {
+  position: absolute;
+  background-color: #fff;
+  top: 15%;
+  width: 35%;
+  height: 40vh;
+  box-shadow: 0 0 8px #808080;
+}
+
+.service_sub_ttl {
+  text-align: center;
+  margin-top: 10%;
+  line-height: 1.8rem;
+}
+
+.service_descript {
+  width: 92%;
+  margin: auto;
+  margin-top: 8%;
+  font-size: 0.8rem;
+}
+
+.service_descript2 {
+  width: 92%;
+  text-align: center;
+  margin: auto;
+  margin-top: 8%;
+  font-size: 0.8rem;
+}
+
+.service_more1 {
+  width: 18%;
+  text-align: center;
+  margin: 8% 0 0 75%;
+  border-bottom: solid 3px;
+  line-height: 2;
+}
+
+.service_img2 {
+  margin-top: 15%;
+  width: 50%;
+  height: 40vh;
+}
+
+.service_bg2 {
+  position: absolute;
+  left: 22%;
+  width: 65%;
+  height: 42vh;
+  z-index: -1;
+  background-color: #F3F3F3;
+  top: 45%;
+}
+
+.text_box2 {
+  position: absolute;
+  background-color: #fff;
+  top: 50%;
+  left: 60%;
+  width: 35%;
+  height: 40vh;
+  box-shadow: 0 0 8px #808080;
+}
+
+.service_more2 {
+  width: 18%;
+  text-align: center;
+  margin: 8% 0 0 65%;
+  border-bottom: solid 3px;
+  line-height: 2;
+}
+
+.service_img3 {
+  margin-top: 15%;
+  margin-left: 50%;
+  width: 50%;
+  height: 40vh;
+}
+
+.service_bg3 {
+  position: absolute;
+  left: 22%;
+  width: 65%;
+  height: 42vh;
+  z-index: -1;
+  background-color: #F3F3F3;
+  top: 82%;
+}
+
+.text_box3 {
+  position: absolute;
+  background-color: #fff;
+  top: 87%;
+  width: 35%;
+  height: 40vh;
+  box-shadow: 0 0 8px #808080;
+}
+
+.service_more3 {
+  width: 18%;
+  text-align: center;
+  margin: 8% 0 0 75%;
+  border-bottom: solid 3px;
+  line-height: 2;
+}
+
+.about_ttl {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  margin-bottom: 5%;
+  color: #129DA4;
+}
+
+#about {
+  margin-top: 20%;
+}
+
+.about_item {
+  width: 50%;
+  margin: auto;
+  padding-left: 5%;
+  display: flex;
+  line-height: 3;
+  border-bottom: solid 2px;
+  border-color: #808080;
+}
+.about_item span {
+  width: 20%;
+  margin-right: 10%;
+}
+.about_item p {
+  text-align: left;
+}
+
+#faq {
+  margin-top: 15%;
+}
+
+.faq_ttl {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.accordion {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.accordion_outer {
+  margin: 1%;
+  padding: 3%;
+  background-color: #fff;
+  border: solid 2px #000;
+  cursor: pointer;
+  display: flex;
+}
+
+.accordion_inner {
+  margin: 5%;
+  background-color: #F3F3F3;
+  border: solid 2px #000;
+  display: none;
+}
+
+.accordion_outer::before {
+  content: "";
+  width: 2px;
+  height: 15px;
+  margin-right: 2%;
+  background-color: #000;
+}
+
+#contact {
+  margin-top: 15%;
+}
+
+.contact_ttl {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  margin-bottom: 5%;
+  color: #129DA4;
 }

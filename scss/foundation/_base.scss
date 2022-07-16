@@ -1,96 +1,298 @@
 @use "../global" as g;
 
 // 全体に対して
-a{
+
+a {
   text-decoration: none;
 }
 
-li{
+li {
   list-style: none;
 }
 
-.inner{
+.inner {
   width: 90%;
   margin: 0 auto;
 }
 
-section{
+section {
   margin-bottom: 5%;
 }
 
 // ヘッダー設定
-.header{
+.header {
   display: flex;
   padding: 1rem 0;
-    &_text{
-      color:g.$cBluLight;
-      font-weight: bold;
-      letter-spacing: 0.2rem;
-    }
-  }
 
-nav{
+  &_text {
+    color: g.$cBluLight;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+  }
+}
+
+nav {
   margin: 0 auto;
   width: 30%;
   display: flex;
   justify-content: space-between;
 }
 
-.top_img{
+.top_img {
   height: 80vh;
   width: 100%;
 }
 
-// VISION
-.vision{
+// VISIONセクション
+.vision {
   display: flex;
 }
 
-.vision_left{
+.vision_left {
   width: 50%;
 }
 
-.vision_left_txt{
+.vision_left_txt {
   display: flex;
   line-height: 2.5rem;
+
   small {
     border-left: solid 3px;
     margin-right: 2%;
-}
+  }
 }
 
-.vision_img{
+.vision_img {
   height: 55vh;
   width: auto;
   margin-top: 5%;
 }
 
-.vision_right{
+.vision_right {
   width: 50%;
   margin-top: 10%;
   text-align: end;
 }
 
-.vision_ttl{
+.vision_ttl {
   color: g.$cBluLight;
   @include g.title;
   margin-bottom: 15px;
-    &_lead{
-      font-weight: bold;
-      line-height: 2rem;
-      color: g.$cBluLight;
+
+  &_lead {
+    font-weight: bold;
+    line-height: 2rem;
+    color: g.$cBluLight;
   }
 }
 
-.vision_desc{
+.vision_desc {
   font-size: 1rem;
   line-height: 5rem;
 }
 
-.bar{
+.bar {
   margin: 5% 0 5% auto;
   flex-direction: row-reverse;
   width: 35%;
   height: 0.2rem;
   background-color: g.$cBluLight;
+}
+
+// SERVICEセクション
+#service {
+  position: relative;
+  margin-top: 15%;
+  margin-bottom: 10%
+}
+
+.service_ttl {
+  @include g.title;
+}
+
+.service_img1 {
+  width: 50%;
+  margin-left: 50%;
+}
+
+.service_bg1 {
+  top: 10%;
+  @include g.bg;
+  background-color: g.$cgrayLight;
+}
+
+.text_box1 {
+  position: absolute;
+  background-color: g.$cwhite;
+  top: 15%;
+  width: 35%;
+  height: 40vh;
+  box-shadow: 0 0 8px g.$cgray;
+}
+
+.service_sub_ttl {
+  text-align: center;
+  margin-top: 10%;
+  line-height: 1.8rem;
+}
+
+.service_descript {
+  width: 92%;
+  margin: auto;
+  margin-top: 8%;
+  font-size: 0.8rem;
+}
+
+.service_descript2 {
+  width: 92%;
+  text-align: center;
+  margin: auto;
+  margin-top: 8%;
+  font-size: 0.8rem;
+}
+
+.service_more1 {
+  width: 18%;
+  text-align: center;
+  margin: 8% 0 0 75%;
+  border-bottom: solid 3px;
+  line-height: 2;
+}
+
+.service_img2 {
+  margin-top: 15%;
+  width: 50%;
+  height: 40vh
+}
+
+.service_bg2 {
+  @include g.bg;
+  background-color: g.$cgrayLight;
+  top: 45%;
+}
+
+.text_box2 {
+  position: absolute;
+  background-color: g.$cwhite;
+  top: 50%;
+  left: 60%;
+  width: 35%;
+  height: 40vh;
+  box-shadow: 0 0 8px g.$cgray;
+}
+
+.service_more2 {
+  width: 18%;
+  text-align: center;
+  margin: 8% 0 0 65%;
+  border-bottom: solid 3px;
+  line-height: 2;
+}
+
+.service_img3 {
+  margin-top: 15%;
+  margin-left: 50%;
+  width: 50%;
+  height: 40vh
+}
+
+.service_bg3 {
+  @include g.bg;
+  background-color: g.$cgrayLight;
+  top: 82%;
+}
+
+.text_box3 {
+  position: absolute;
+  background-color: g.$cwhite;
+  top: 87%;
+  width: 35%;
+  height: 40vh;
+  box-shadow: 0 0 8px g.$cgray;
+}
+
+.service_more3 {
+  width: 18%;
+  text-align: center;
+  margin: 8% 0 0 75%;
+  border-bottom: solid 3px;
+  line-height: 2;
+}
+
+.about_ttl {
+  @include g.title;
+  color: g.$cBluLight;
+}
+
+// ABOUTセクション
+#about {
+  margin-top: 20%;
+}
+
+.about_item {
+  width: 50%;
+  margin: auto;
+  padding-left: 5%;
+  display: flex;
+  line-height: 3;
+  border-bottom: solid 2px;
+  border-color: g.$cgray;
+
+  & span {
+    width: 20%;
+    margin-right: 10%;
+  }
+
+  & p {
+    text-align: left;
+  }
+}
+
+// faqセクション
+#faq {
+  margin-top: 15%;
+}
+
+.faq_ttl {
+  @include g.title;
+}
+
+.accordion {
+  width: 70%;
+  margin: 0 auto;
+  background-color: g.$cwhite;
+}
+
+.accordion_outer {
+  margin: 1%;
+  padding: 3%;
+  background-color: g.$cwhite;
+  border: solid 2px #000;
+  cursor: pointer;
+  display: flex;
+}
+
+.accordion_inner {
+  margin: 5%;
+  background-color: g.$cgrayLight;
+  border: solid 2px #000;
+  display: none;
+}
+
+.accordion_outer::before {
+  content: "";
+  width: 2px;
+  height: 15px;
+  margin-right: 2%;
+  background-color: #000;
+}
+
+// contactセクション
+#contact {
+  margin-top: 15%;
+}
+
+.contact_ttl {
+  @include g.title;
+  color: g.$cBluLight;
 }
