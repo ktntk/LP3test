@@ -8,10 +8,25 @@
   margin-bottom: 5%;
 }
 
-@mixin bg {
+@mixin serviceBg {
   position: absolute;
   left: 22%;
   width: 65%;
   height: 42vh;
   z-index: -1;
+}
+
+@mixin imgSize{
+  width: 50%;
+  height: 40vh;
+}
+
+@mixin serviceBox{
+  position: absolute;
+  background-color: #fff;
+  top: 50%;
+  left: 60%;
+  width: 35%;
+  height: 40vh;
+  box-shadow: 0 0 8px #808080;
 }

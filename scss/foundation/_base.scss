@@ -1,9 +1,25 @@
 @use "../global" as g;
 
-// 全体に対して
+body {
+  font-size: 18px;
 
+  @include g.mq(pc) {
+    font-size: 18px;
+  }
+
+  @include g.mq(tab) {
+    font-size: 16px;
+  }
+
+  @include g.mq(sp) {
+    font-size: 10px;
+  }
+}
+
+// 全体に対して
 a {
   text-decoration: none;
+  color: g.$cBlack;
 }
 
 li {
@@ -20,74 +36,99 @@ section {
 }
 
 // // ローディングアニメーション
-.loader-text {
-  position: absolute;
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: g.$cWhite;
+  z-index: 9999999;
   text-align: center;
-  top: 50%;
-  left: 45%;
-  font-size: 2rem;
-  letter-spacing: 1rem;
-  color: g.$cBluLight;
+  color: g.$cWhite;
 }
 
-// @keyframes slideOut {
-//   from {
-//     transform: translate(0);
-//   }
-//   to {
-//     transform: translatex(100%);
-//   }
-// }
+#loading-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: g.$cBluLight;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
 
-// #loader {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100vh;
-//   z-index: 2;
-//   .loader-slide1 {
-//     width: 100%;
-//     height: 100%;
-//     background-color: g.$cBluLight;
-//     &.open1 {
-//       animation-name: slideOut;
-//       animation-fill-mode: forwards;
-//       animation-duration: 1s;
-//       animation-delay: 3.5s;
-//     }
-//   }
-// }
+.loading_bg {
+  display: none;
+}
 
-// #loader2 {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100vh;
-//   z-index: 2;
-//   .loader-slide2 {
-//     width: 100%;
-//     height: 100%;
-//     background-color: #fff;
-//     &.open2 {
-//       animation-name: slideOut;
-//       animation-fill-mode: forwards;
-//       animation-duration: 1s;
-//       animation-delay: 2.5s;
-//     }
-//   }
-// }
+body.appear .loading_bg {
+  display: block;
+  content: "";
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  background-color: g.$cBluLight;
+  animation-name: PageAnime;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes PageAnime {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  50.001% {
+    transform-origin: right;
+  }
+
+  100% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+
+#container {
+  opacity: 0;
+}
+
+body.appear #container {
+  animation-name: PageAnimeAppear;
+  animation-duration: 1s;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes PageAnimeAppear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 
 
 // ヘッダー設定
 #header {
   width: 100%;
   height: 60px;
-  background-color: #fff;
   display: flex;
   position: fixed;
   z-index: 1;
+  background-color: g.$cWhite;
 }
 
 .header {
@@ -106,9 +147,11 @@ nav {
   width: 30%;
   display: flex;
   justify-content: space-between;
+  font-family: g.$fNav;
 }
 
 .top_img {
+  margin-top: 4%;
   height: 100vh;
   width: 100%;
 }
@@ -130,11 +173,16 @@ nav {
     border-left: solid 3px;
     margin-right: 2%;
   }
+
+  p {
+    font-family: g.$fNav;
+    letter-spacing: 2px;
+  }
 }
 
 .vision_img {
-  height: 55vh;
-  width: auto;
+  height: auto;
+  width: 100%;
   margin-top: 5%;
 }
 
@@ -180,19 +228,44 @@ nav {
   @include g.title;
 }
 
+.service_img1 {
+  @include g.imgSize;
+  margin-left: 50%;
+  transform: rotateY(180deg);
+}
+
+.service_img2 {
+  margin-top: 15%;
+  @include g.imgSize;
+}
+
+.service_img3 {
+  margin-top: 15%;
+  margin-left: 50%;
+  @include g.imgSize;
+}
+
 .text_box1 {
-  position: absolute;
-  background-color: g.$cwhite;
+  @include g.serviceBox;
   top: 15%;
-  width: 35%;
-  height: 40vh;
-  box-shadow: 0 0 8px g.$cgray;
+}
+
+.text_box2 {
+  @include g.serviceBox;
+  top: 50%;
+  left: 60%;
+}
+
+.text_box3 {
+  @include g.serviceBox;
+  top: 87%;
 }
 
 .service_sub_ttl {
   text-align: center;
   margin-top: 10%;
   line-height: 1.8rem;
+  font-weight: bold;
 }
 
 .service_descript {
@@ -210,22 +283,25 @@ nav {
   font-size: 0.8rem;
 }
 
-.service_img1 {
-  width: 50%;
-  margin-left: 50%;
-  transform: rotateY(180deg);
-}
-
 .service_bg1 {
   top: 10%;
-  @include g.bg;
-  background-color: g.$cgrayLight;
+  @include g.serviceBg;
+}
+
+.service_bg2 {
+  @include g.serviceBg;
+  top: 45%;
+}
+
+.service_bg3 {
+  @include g.serviceBg;
+  top: 82%;
 }
 
 .service_more1 {
   &::before {
     content: '';
-    background-color: #000;
+    background-color: g.$cBlack;
     position: absolute;
     left: 0;
     bottom: 1px;
@@ -245,7 +321,7 @@ nav {
   line-height: 2;
 
   &:hover {
-    color: #fff;
+    color: g.$cWhite;
 
     &::before {
       bottom: 0;
@@ -254,32 +330,10 @@ nav {
   }
 }
 
-.service_img2 {
-  margin-top: 15%;
-  width: 50%;
-  height: 40vh
-}
-
-.service_bg2 {
-  @include g.bg;
-  background-color: g.$cgrayLight;
-  top: 45%;
-}
-
-.text_box2 {
-  position: absolute;
-  background-color: g.$cwhite;
-  top: 50%;
-  left: 60%;
-  width: 35%;
-  height: 40vh;
-  box-shadow: 0 0 8px g.$cgray;
-}
-
 .service_more2 {
   &::before {
     content: '';
-    background-color: #000;
+    background-color: g.$cBlack;
     position: absolute;
     left: 0;
     bottom: 1px;
@@ -299,7 +353,7 @@ nav {
   line-height: 2;
 
   &:hover {
-    color: #fff;
+    color: g.$cWhite;
 
     &::before {
       bottom: 0;
@@ -308,32 +362,10 @@ nav {
   }
 }
 
-.service_img3 {
-  margin-top: 15%;
-  margin-left: 50%;
-  width: 50%;
-  height: 40vh
-}
-
-.service_bg3 {
-  @include g.bg;
-  background-color: g.$cgrayLight;
-  top: 82%;
-}
-
-.text_box3 {
-  position: absolute;
-  background-color: g.$cwhite;
-  top: 87%;
-  width: 35%;
-  height: 40vh;
-  box-shadow: 0 0 8px g.$cgray;
-}
-
 .service_more3 {
   &::before {
     content: '';
-    background-color: #000;
+    background-color: g.$cBlack;
     position: absolute;
     left: 0;
     bottom: 1px;
@@ -353,7 +385,7 @@ nav {
   line-height: 2;
 
   &:hover {
-    color: #fff;
+    color: g.$cWhite;
 
     &::before {
       bottom: 0;
@@ -379,7 +411,7 @@ nav {
   display: flex;
   line-height: 3;
   border-bottom: solid 2px;
-  border-color: g.$cgray;
+  border-color: g.$cGray;
 
   & span {
     width: 20%;
@@ -522,7 +554,7 @@ nav {
   margin: 0 auto;
   display: block;
   color: #000;
-  background: #fff;
+  background: g.$cWhite;
   transition: 0.4s;
   cursor: pointer;
   font-size: 1.2rem;
