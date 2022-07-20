@@ -9,18 +9,26 @@
   </head>
 
 <body>
-  
-  <header>
+  <!-- ローディングアニメーション -->
+  <div id="loader">
+    <div class="loader-slide1"></div>
+  </div>
+  <div id="loader2">
+    <div class="loader-slide2"></div>
+      <div class="loader-text">ABC商事</div>
+  </div>
+
+  <header id="header">
     <div class="header inner">
       <a href="#" class="header_text">
         ABC商事
       </a>
       <nav>
-        <li>VISION</li>
-        <li>SERVICE</li>
-        <li>ABOUT</li>
-        <li>FAQ</li>
-        <li>CONTACT</li>
+        <li><a href="#vision">VISION</a></li>
+        <li><a href="#service">SERVICE</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">CONTACT</a></li>
       </nav>
     </div>
     <div class="drawer"></div>
@@ -37,21 +45,21 @@
     <div class="vision inner">
       <div class="vision_left">
         <div class="vision_left_txt">
-          <small></small>
+          <small> </small>
             <p>TOPICS<br>2021.1.01 株式会社ABC商事設立</p>
         </div>
         <div>
           <img class="vision_img" src="/img/pic_01.jpg" alt="トピック画像">
         </div>
       </div>
-      <div class="vision_right">
+      <div class="vision_right rotate">
         <h1 class="vision_ttl">
           VISION
         </h1>
         <p class="vision_ttl_lead">
           わたしたちは、革新技術の提供により、<br>世界的課題の解決に貢献します。
         </p>
-        <div class="bar"></div>
+        <div class="vision_bar"></div>
         <p class="vision_desc">
           わたしたちは新しい価値の創造を通じて社会に貢献します<br>
           わたしたちは、革新技術・先端材料の提供により、世界的課題の解決に貢献します
@@ -66,33 +74,33 @@
         SERVICE
       </h2>
       <div class="service_bg1"></div>
-      <div class="text_box1">
+      <div class="text_box1 rotate">
         <p class="service_sub_ttl">CONSULTING<br>コンサルティング事業</p>
         <p class="service_descript">経営・システム・デジタルマーケティングの目線でのコンサルティングを行います。</p>
       <div class="service_more1">MORE</div>
       </div>
       <figure>
-        <img class="service_img1" src="/img/pic_02.jpg" alt="サービス画像1">
+        <img class="service_img1 rotate" src="/img/pic_02.jpg" alt="サービス画像1">
       </figure>
 
       <div class="service_bg2"></div>
-      <div class="text_box2">
+      <div class="text_box2 rotate">
       <p class="service_sub_ttl">DEVELOPMENT<br>受託開発事業</p>
       <p class="service_descript2">プロジェクト/プロダクトマネージメントの支援を致します。</p>
       <div class="service_more2">MORE</div>
       </div>
       <figure>
-        <img class="service_img2" src="/img/pic_03.jpg" alt="サービス画像1">
+        <img class="service_img2 rotate" src="/img/pic_03.jpg" alt="サービス画像1">
       </figure>
 
       <div class="service_bg3"></div>
-      <div class="text_box3">
+      <div class="text_box3 rotate">
       <p class="service_sub_ttl">EDUCATION<br>教育事業</p>
       <p class="service_descript">新人エンジニアやデザイナーの教育、新人研修・プログラミング研修を徹底して行います。</p>
       <div class="service_more3">MORE</div>
       </div>
       <figure>
-        <img class="service_img3" src="/img/pic_04.jpg" alt="サービス画像1">
+        <img class="service_img3 rotate" src="/img/pic_04.jpg" alt="サービス画像1">
       </figure>
     </div> 
     </section>
@@ -102,7 +110,7 @@
         <h3 class="about_ttl">
           ABOUT
         </h3>
-        <ul>
+        <ul class="up">
 					<li class="about_item"> <span>会社名</span>
 						<p>株式会社ABC商事</p>
 					</li>
@@ -133,16 +141,40 @@
       <h3 class="faq_ttl">
       FAQ
       </h3>
-        <ul class="accordion">
-          <li class="accordion_outer">お見積りの目安はいくらからでしょうか？</li>
-          <li class="accordion_inner">内容によって変化いたしますのでまずはお問い合わせフォームよりご相談ください。</li>
-          <li class="accordion_outer">東京以外からでの発注は可能でしょうか</li>
-          <li class="accordion_inner">回答2</li>
-          <li class="accordion_outer">セミナーやイベントの企画を依頼したいのですが</li>
-          <li class="accordion_inner">回答3</li>
-          <li class="accordion_outer">WEBを媒体とした記事作成は可能ですか？</li>
-          <li class="accordion_inner">回答4</li>
-        </ul>
+        <ul class="accordion-area">
+          <li>
+          <section class="up">
+            <h3 class="question">お見積もりの目安はいくらからでしょうか？</h3>
+            <div class="answer">
+              <p>内容によって変化いたしますのでまずはお問い合わせフォームよりご相談ください。</p>
+            </div>
+          </section>
+          </li>
+          <li>
+            <section class="up">
+              <h3 class="question">東京以外からの発注は可能でしょうか</h3>
+              <div class="answer">
+                <p>回答2</p>
+              </div>
+            </section>
+          </li>
+          <li>
+            <section class="up">
+              <h3 class="question">セミナーやイベントの企画を依頼したいのですが</h3>
+              <div class="answer">
+                <p>回答3</p>
+              </div>
+            </section>
+          </li>
+          <li>
+          <section class="up">
+            <h3 class="question">WEBを媒体とした記事作成は可能ですか？</h3>
+            <div class="answer">
+              <p>回答4</p>
+            </div>
+          </section>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -151,15 +183,45 @@
       <h4 class="contact_ttl">
       CONTACT
       </h4>
-
-      
-      
+        <form action="#" class="contact_form" id="form">
+          <div class="contact_box">
+            <label for="name" class="contact_form_ttl">会社名・部署名</label>
+            <input type="text" class="contact_form_box2" name="" required="required">
+          </div>
+          <div class="contact_box">
+            <label for="name" class="contact_form_ttl">担当者名</label>
+            <input type="text" class="contact_form_box2" name="" required="required">
+          </div>
+          <div class="contact_box">
+            <label for="email" class="contact_form_ttl">メールアドレス</label>
+            <input type="email" class="contact_form_box2" name="" required="required">
+          </div>
+          <div class="contact_box">
+            <label for="neme" class="contact_form_ttl">電話番号</label>
+            <input type="text" class="contact_form_box2" name="" required="required">
+          </div>
+          <div class="contact_box _area">
+            <label for="message" class="contact_form_ttl _ttl">お問い合わせ内容</label>
+            <textarea name="message" class="contact_txtarea" id="message" required="required"></textarea>
+          </div>
+            <button type="submit" class="btn contact_btn">確認</button>
+        </form>
     </div>
   </section>
-
 </main>
+
+  <footer>
+    <div class="footer_inner">
+      <div>株式会社ABC商事</div>
+      <div>© ABC .INC</div>
+    </div>
+  </footer>
 	
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  
   <script src="js/common.js"></script>
 </body>
 </html>

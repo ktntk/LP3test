@@ -19,10 +19,80 @@ section {
   margin-bottom: 5%;
 }
 
+// // ローディングアニメーション
+.loader-text {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 45%;
+  font-size: 2rem;
+  letter-spacing: 1rem;
+  color: g.$cBluLight;
+}
+
+// @keyframes slideOut {
+//   from {
+//     transform: translate(0);
+//   }
+//   to {
+//     transform: translatex(100%);
+//   }
+// }
+
+// #loader {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100vh;
+//   z-index: 2;
+//   .loader-slide1 {
+//     width: 100%;
+//     height: 100%;
+//     background-color: g.$cBluLight;
+//     &.open1 {
+//       animation-name: slideOut;
+//       animation-fill-mode: forwards;
+//       animation-duration: 1s;
+//       animation-delay: 3.5s;
+//     }
+//   }
+// }
+
+// #loader2 {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100vh;
+//   z-index: 2;
+//   .loader-slide2 {
+//     width: 100%;
+//     height: 100%;
+//     background-color: #fff;
+//     &.open2 {
+//       animation-name: slideOut;
+//       animation-fill-mode: forwards;
+//       animation-duration: 1s;
+//       animation-delay: 2.5s;
+//     }
+//   }
+// }
+
+
 // ヘッダー設定
+#header {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  position: fixed;
+  z-index: 1;
+}
+
 .header {
   display: flex;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 
   &_text {
     color: g.$cBluLight;
@@ -39,7 +109,7 @@ nav {
 }
 
 .top_img {
-  height: 80vh;
+  height: 100vh;
   width: 100%;
 }
 
@@ -91,7 +161,7 @@ nav {
   line-height: 5rem;
 }
 
-.bar {
+.vision_bar {
   margin: 5% 0 5% auto;
   flex-direction: row-reverse;
   width: 35%;
@@ -108,17 +178,6 @@ nav {
 
 .service_ttl {
   @include g.title;
-}
-
-.service_img1 {
-  width: 50%;
-  margin-left: 50%;
-}
-
-.service_bg1 {
-  top: 10%;
-  @include g.bg;
-  background-color: g.$cgrayLight;
 }
 
 .text_box1 {
@@ -151,12 +210,48 @@ nav {
   font-size: 0.8rem;
 }
 
+.service_img1 {
+  width: 50%;
+  margin-left: 50%;
+  transform: rotateY(180deg);
+}
+
+.service_bg1 {
+  top: 10%;
+  @include g.bg;
+  background-color: g.$cgrayLight;
+}
+
 .service_more1 {
+  &::before {
+    content: '';
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 100%;
+    height: 2px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+  }
+}
+
+.service_more1 {
+  text-decoration: none;
+  position: relative;
   width: 18%;
   text-align: center;
   margin: 8% 0 0 75%;
-  border-bottom: solid 3px;
   line-height: 2;
+
+  &:hover {
+    color: #fff;
+
+    &::before {
+      bottom: 0;
+      height: 100%;
+    }
+  }
 }
 
 .service_img2 {
@@ -182,11 +277,35 @@ nav {
 }
 
 .service_more2 {
+  &::before {
+    content: '';
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 100%;
+    height: 2px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+  }
+}
+
+.service_more2 {
+  text-decoration: none;
+  position: relative;
   width: 18%;
   text-align: center;
   margin: 8% 0 0 65%;
-  border-bottom: solid 3px;
   line-height: 2;
+
+  &:hover {
+    color: #fff;
+
+    &::before {
+      bottom: 0;
+      height: 100%;
+    }
+  }
 }
 
 .service_img3 {
@@ -212,19 +331,43 @@ nav {
 }
 
 .service_more3 {
+  &::before {
+    content: '';
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 100%;
+    height: 2px;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+  }
+}
+
+.service_more3 {
+  text-decoration: none;
+  position: relative;
   width: 18%;
   text-align: center;
   margin: 8% 0 0 75%;
-  border-bottom: solid 3px;
   line-height: 2;
+
+  &:hover {
+    color: #fff;
+
+    &::before {
+      bottom: 0;
+      height: 100%;
+    }
+  }
 }
 
+// ABOUTセクション
 .about_ttl {
   @include g.title;
   color: g.$cBluLight;
 }
 
-// ABOUTセクション
 #about {
   margin-top: 20%;
 }
@@ -257,34 +400,66 @@ nav {
   @include g.title;
 }
 
-.accordion {
-  width: 70%;
+/*アコーディオンメニュー*/
+.accordion-area {
+  list-style: none;
+  width: 96%;
+  max-width: 900px;
   margin: 0 auto;
-  background-color: g.$cwhite;
 }
 
-.accordion_outer {
-  margin: 1%;
-  padding: 3%;
-  background-color: g.$cwhite;
-  border: solid 2px #000;
+.accordion-area li {
+  margin: 10px 0;
+  margin-top: -30px;
+}
+
+.accordion-area section {
+  border: 1px solid #ccc;
+}
+
+.question {
+  position: relative;
   cursor: pointer;
-  display: flex;
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 3% 3% 3% 50px;
+  transition: all .5s ease;
 }
 
-.accordion_inner {
-  margin: 5%;
-  background-color: g.$cgrayLight;
-  border: solid 2px #000;
+.question::before,
+.question::after {
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 2px;
+  background-color: #333;
+}
+
+.question::before {
+  top: 48%;
+  left: 15px;
+  transform: rotate(0deg);
+}
+
+.question::after {
+  top: 48%;
+  left: 15px;
+  transform: rotate(90deg);
+}
+
+.question.close::before {
+  transform: rotate(45deg);
+}
+
+.question.close::after {
+  transform: rotate(-45deg);
+}
+
+.answer {
   display: none;
-}
-
-.accordion_outer::before {
-  content: "";
-  width: 2px;
-  height: 15px;
-  margin-right: 2%;
-  background-color: #000;
+  background: #f3f3f3;
+  margin: 0 3% 3% 3%;
+  padding: 3%;
 }
 
 // contactセクション
@@ -295,4 +470,68 @@ nav {
 .contact_ttl {
   @include g.title;
   color: g.$cBluLight;
+  margin-bottom: 10%;
+}
+
+.contact_item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact_form {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contact_box {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 2%;
+}
+
+.contact_box._area {
+  align-items: baseline;
+}
+
+.contact_form_box1,
+.contact_form_box2 {
+  height: 5vh;
+  width: 50%;
+  font-size: 1rem;
+}
+
+.contact_txtarea {
+  width: 50%;
+  height: 30vh;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.contact_form_ttl {
+  width: 20%;
+  height: 100%;
+  margin-left: 10%;
+  font-size: 1.15rem;
+  position: relative;
+}
+
+.contact_btn {
+  width: 12%;
+  margin: 0 auto;
+  display: block;
+  color: #000;
+  background: #fff;
+  transition: 0.4s;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+// footer
+.footer_inner {
+  width: 100%;
+  text-align: center;
+  line-height: 5;
+  border-top: solid 1px;
 }
