@@ -30,9 +30,7 @@ ScrollReveal().reveal('.up', {
   duration: 1200,
   reset: true
 });
-$(window).scroll(function () {
-  up();
-});
+
 
 // FAQ
 $('.question').on('click', function () {

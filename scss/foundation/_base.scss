@@ -231,7 +231,6 @@ nav {
 .service_img1 {
   @include g.imgSize;
   margin-left: 50%;
-  transform: rotateY(180deg);
 }
 
 .service_img2 {
@@ -248,12 +247,13 @@ nav {
 .text_box1 {
   @include g.serviceBox;
   top: 15%;
+
 }
 
 .text_box2 {
   @include g.serviceBox;
   top: 50%;
-  left: 60%;
+  left: 60%
 }
 
 .text_box3 {

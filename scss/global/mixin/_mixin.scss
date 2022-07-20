@@ -10,6 +10,7 @@
 
 @mixin serviceBg {
   position: absolute;
+  background-color: #f3f3f3;
   left: 22%;
   width: 65%;
   height: 42vh;
@@ -25,7 +26,6 @@
   position: absolute;
   background-color: #fff;
   top: 50%;
-  left: 60%;
   width: 35%;
   height: 40vh;
   box-shadow: 0 0 8px #808080;
