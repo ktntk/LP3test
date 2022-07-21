@@ -202,6 +202,42 @@ section {
   margin-bottom: 5%;
 }
 
+.header_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+}
+
+.header_nav {
+  width: 100%;
+}
+
+.header_nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 20%;
+}
+
+.header_nav ul li {
+  font-size: 1.1rem;
+  padding-left: 8%;
+}
+
+.header_nav ul li:last-child {
+  border-right: none;
+}
+
+.header_nav ul li a:hover {
+  color: #129DA4;
+  opacity: 0.8;
+}
+
+header .drawer {
+  visibility: hidden;
+}
+
 #loading {
   position: fixed;
   width: 100%;
@@ -299,12 +335,16 @@ body.appear #container {
   letter-spacing: 0.2rem;
 }
 
-nav {
+.header_nav {
   margin: 0 auto;
   width: 30%;
   display: flex;
   justify-content: space-between;
   font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+header .drawer {
+  visibility: hidden;
 }
 
 .top_img {
@@ -415,6 +455,7 @@ nav {
   height: 40vh;
   box-shadow: 0 0 8px #808080;
   top: 15%;
+  font-family: "M PLUS 1p", sans-serif;
 }
 
 .text_box2 {
@@ -426,6 +467,7 @@ nav {
   box-shadow: 0 0 8px #808080;
   top: 50%;
   left: 60%;
+  font-family: "M PLUS 1p", sans-serif;
 }
 
 .text_box3 {
@@ -436,6 +478,7 @@ nav {
   height: 40vh;
   box-shadow: 0 0 8px #808080;
   top: 87%;
+  font-family: "M PLUS 1p", sans-serif;
 }
 
 .service_sub_ttl {
@@ -752,4 +795,258 @@ nav {
   text-align: center;
   line-height: 5;
   border-top: solid 1px;
+}
+
+@media screen and (max-width: 1024px) {
+  nav {
+    width: 50%;
+  }
+  .top_img {
+    height: 50vh;
+  }
+  .text_box1 {
+    height: 23%;
+  }
+  .text_box2 {
+    margin-top: 5%;
+    height: 23%;
+  }
+  .text_box3 {
+    margin-top: 5%;
+    height: 23%;
+  }
+  .service_img1 {
+    height: 20%;
+  }
+  .service_img2 {
+    margin-top: 20%;
+    height: 15vh;
+  }
+  .service_img3 {
+    margin-top: 25%;
+    height: 15vh;
+  }
+  .service_bg1 {
+    height: 25%;
+  }
+  .service_bg2 {
+    height: 25%;
+  }
+  .service_bg3 {
+    height: 25%;
+  }
+  .contact_form_box1,
+.contact_form_box2 {
+    height: 3vh;
+  }
+  .contact_txtarea {
+    height: 15vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .vision_desc {
+    width: 95%;
+    margin-left: 5%;
+    font-size: 0.7rem;
+    line-height: 2rem;
+  }
+  .service_sub_ttl {
+    line-height: 1rem;
+  }
+  .contact_form_ttl {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  header .drawer {
+    visibility: visible;
+    width: 24px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border-top: solid 4px #000;
+    cursor: pointer;
+    z-index: 100;
+  }
+  header .drawer::before,
+header .drawer::after {
+    content: "";
+    display: block;
+    width: 24px;
+    background: #fff;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.5s;
+    color: #000;
+  }
+  header .drawer::before {
+    top: 6px;
+  }
+  header .drawer::after {
+    top: 15px;
+  }
+  header .header_nav {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background: #000;
+  }
+  header .header_nav ul {
+    display: block;
+    margin: 25% 0;
+  }
+  header .header_nav ul li {
+    margin: 5% auto;
+    border-right: unset;
+  }
+  header .header_nav ul li a {
+    line-height: 3;
+    font-size: 1.75rem;
+  }
+  body.nav-open header .drawer {
+    border-top: 0;
+  }
+  body.nav-open header .drawer::before {
+    top: 9px;
+    transform: rotate(-45deg);
+  }
+  body.nav-open header .drawer::after {
+    top: 9px;
+    transform: rotate(45deg);
+  }
+  .top_img {
+    height: 50vh;
+    width: 100%;
+    background-position: center;
+    object-fit: cover;
+  }
+  .inner {
+    width: 75%;
+  }
+  .vision {
+    display: block;
+  }
+  .vision_left {
+    width: 90%;
+  }
+  .vision_right {
+    width: 90%;
+  }
+  .vision_ttl {
+    text-align: start;
+  }
+  .vision_ttl_lead {
+    text-align: start;
+  }
+  .vision_desc {
+    text-align: start;
+    margin-left: 0%;
+  }
+  .vision_left_txt {
+    display: flex;
+    line-height: 1rem;
+  }
+  .vision_left_txt small {
+    border-left: solid 3px;
+    margin-right: 2%;
+  }
+  .vision_left_txt .vision_left_txt p {
+    width: 10%;
+  }
+  .service_sub_ttl {
+    margin-top: 6%;
+  }
+  .service_descript, .service_descript2 {
+    width: 80%;
+  }
+  .service_img1 {
+    height: 15vh;
+    width: 100%;
+    margin-left: 0;
+  }
+  .service_img2 {
+    margin-top: 65%;
+    height: 15vh;
+    width: 100%;
+    margin-left: 0;
+  }
+  .service_img3 {
+    margin-top: 65%;
+    height: 15vh;
+    width: 100%;
+    margin-left: 0;
+  }
+  .text_box1 {
+    top: 20%;
+    height: 20vh;
+    width: 75%;
+    margin-left: 0%;
+  }
+  .text_box2 {
+    top: 57%;
+    height: 20vh;
+    width: 75%;
+    margin-left: 12.5%;
+    left: 0;
+  }
+  .text_box3 {
+    top: 97%;
+    height: 20vh;
+    width: 75%;
+    margin-left: 12.5%;
+    margin-bottom: 20%;
+    left: 0;
+  }
+  .service_bg1 {
+    width: 0;
+    height: 0;
+  }
+  .service_bg2 {
+    width: 0;
+    height: 0;
+  }
+  .service_bg3 {
+    width: 0;
+    height: 0;
+  }
+  #about {
+    margin-top: 70%;
+  }
+  .about_item {
+    width: 95%;
+    font-size: 8px;
+  }
+  .question {
+    font-size: 8px;
+  }
+  .accordion-area li {
+    margin-top: 0;
+  }
+  .contact_box {
+    display: block;
+  }
+  .contact_form_box2 {
+    width: 100%;
+    margin-top: 2%;
+  }
+  .contact_form_ttl {
+    width: 100%;
+    margin-left: 0;
+  }
+  .contact_txtarea {
+    width: 100%;
+    margin-top: 2%;
+  }
+  .contact_btn {
+    width: 25%;
+    font-size: 12px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
 }
