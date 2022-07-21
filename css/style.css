@@ -868,26 +868,25 @@ header .drawer {
     cursor: pointer;
     z-index: 100;
   }
-  header .drawer::before,
-header .drawer::after {
+  .drawer::before,
+.drawer::after {
     content: "";
     display: block;
     width: 24px;
-    background: #fff;
+    background: #000;
     height: 4px;
     position: absolute;
     top: 0;
     right: 0;
     transition: all 0.5s;
-    color: #000;
   }
-  header .drawer::before {
+  .drawer::before {
     top: 6px;
   }
-  header .drawer::after {
+  .drawer::after {
     top: 15px;
   }
-  header .header_nav {
+  .header_nav {
     position: fixed;
     display: none;
     width: 100%;
@@ -895,7 +894,8 @@ header .drawer::after {
     top: 0;
     left: 0;
     z-index: 50;
-    background: #000;
+    background: #fff;
+    text-align: center;
   }
   header .header_nav ul {
     display: block;
@@ -962,7 +962,8 @@ header .drawer::after {
   .service_sub_ttl {
     margin-top: 6%;
   }
-  .service_descript, .service_descript2 {
+  .service_descript,
+.service_descript2 {
     width: 80%;
   }
   .service_img1 {

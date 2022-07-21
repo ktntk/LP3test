@@ -17,23 +17,23 @@ body {
 }
 
 // 全体に対して
-  a {
-    text-decoration: none;
-    color: g.$cBlack;
-  }
+a {
+  text-decoration: none;
+  color: g.$cBlack;
+}
 
-  li {
-    list-style: none;
-  }
+li {
+  list-style: none;
+}
 
-  .inner {
-    width: 90%;
-    margin: 0 auto;
-  }
+.inner {
+  width: 90%;
+  margin: 0 auto;
+}
 
-  section {
-    margin-bottom: 5%;
-  }
+section {
+  margin-bottom: 5%;
+}
 
 // ハンバーガーメニュー
 .header_inner {
@@ -56,7 +56,7 @@ body {
 
 .header_nav ul li {
   font-size: 1.1rem;
-  padding-left:8%;
+  padding-left: 8%;
 }
 
 .header_nav ul li:last-child {
@@ -73,89 +73,89 @@ header .drawer {
 }
 
 // // ローディングアニメーション
-  #loading {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: g.$cWhite;
-    z-index: 9999999;
-    text-align: center;
-    color: g.$cWhite;
-  }
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: g.$cWhite;
+  z-index: 9999999;
+  text-align: center;
+  color: g.$cWhite;
+}
 
-  #loading-logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: g.$cBluLight;
-    font-size: 2rem;
-    letter-spacing: 2px;
-  }
+#loading-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: g.$cBluLight;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
 
-  .loading_bg {
-    display: none;
-  }
+.loading_bg {
+  display: none;
+}
 
-  body.appear .loading_bg {
-    display: block;
-    content: "";
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
+body.appear .loading_bg {
+  display: block;
+  content: "";
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  background-color: g.$cBluLight;
+  animation-name: PageAnime;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes PageAnime {
+  0% {
+    transform-origin: left;
     transform: scaleX(0);
-    background-color: g.$cBluLight;
-    animation-name: PageAnime;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
   }
 
-  @keyframes PageAnime {
-    0% {
-      transform-origin: left;
-      transform: scaleX(0);
-    }
-
-    50% {
-      transform-origin: left;
-      transform: scaleX(1);
-    }
-
-    50.001% {
-      transform-origin: right;
-    }
-
-    100% {
-      transform-origin: right;
-      transform: scaleX(0);
-    }
+  50% {
+    transform-origin: left;
+    transform: scaleX(1);
   }
 
-  #container {
+  50.001% {
+    transform-origin: right;
+  }
+
+  100% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+
+#container {
+  opacity: 0;
+}
+
+body.appear #container {
+  animation-name: PageAnimeAppear;
+  animation-duration: 1s;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes PageAnimeAppear {
+  0% {
     opacity: 0;
   }
 
-  body.appear #container {
-    animation-name: PageAnimeAppear;
-    animation-duration: 1s;
-    animation-delay: 0.8s;
-    animation-fill-mode: forwards;
-    opacity: 0;
+  100% {
+    opacity: 1;
   }
-
-  @keyframes PageAnimeAppear {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
+}
 
 
 // ヘッダー設定
@@ -171,6 +171,7 @@ header .drawer {
 .header {
   display: flex;
   padding: 1.5rem 0;
+
   &_text {
     color: g.$cBluLight;
     font-weight: bold;
@@ -613,21 +614,26 @@ header .drawer {
 @media screen and (max-width: 1024px) {
   nav {
     width: 50%;
-    }
+  }
+
   .top_img {
     height: 50vh;
   }
-  .text_box1{
+
+  .text_box1 {
     height: 23%;
   }
+
   .text_box2 {
     margin-top: 5%;
     height: 23%;
   }
+
   .text_box3 {
     margin-top: 5%;
     height: 23%;
   }
+
   .service_img1 {
     height: 20%;
   }
@@ -641,6 +647,7 @@ header .drawer {
     margin-top: 25%;
     height: 15vh;
   }
+
   .service_bg1 {
     height: 25%;
   }
@@ -652,25 +659,29 @@ header .drawer {
   .service_bg3 {
     height: 25%;
   }
+
   .contact_form_box1,
   .contact_form_box2 {
     height: 3vh;
   }
+
   .contact_txtarea {
     height: 15vh;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .vision_desc{
+  .vision_desc {
     width: 95%;
     margin-left: 5%;
     font-size: 0.7rem;
     line-height: 2rem;
   }
+
   .service_sub_ttl {
     line-height: 1rem;
   }
+
   .contact_form_ttl {
     font-size: 0.8rem;
   }
@@ -678,132 +689,134 @@ header .drawer {
 
 @media screen and (max-width: 480px) {
   header .drawer {
-      visibility: visible;
-      width: 24px;
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      border-top: solid 4px g.$cBlack;
-      cursor: pointer;
-      z-index: 100;
-    }
-  
-    header .drawer::before,
-    header .drawer::after {
-      content: "";
-      display: block;
-      width: 24px;
-      background: #fff;
-      height: 4px;
-      position: absolute;
-      top: 0;
-      right: 0;
-      transition: all 0.5s;
-      color: #000;
-    }
-  
-    header .drawer::before {
-      top: 6px;
-    }
-  
-    header .drawer::after {
-      top: 15px;
-    }
-  
-    header .header_nav {
-      position: fixed;
-      display: none;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 50;
-      background: #000;
-    }
-  
-    header .header_nav ul {
-      display: block;
-      margin: 25% 0;
-    }
-  
-    header .header_nav ul li {
-      margin: 5% auto;
-      border-right: unset;
-    }
-  
-    header .header_nav ul li a {
-      line-height: 3;
-      font-size: 1.75rem;
-    }
-  
-    body.nav-open header .drawer {
-      border-top: 0;
-    }
-  
-    body.nav-open header .drawer::before {
-      top: 9px;
-      transform: rotate(-45deg);
-    }
-  
-    body.nav-open header .drawer::after {
-      top: 9px;
-      transform: rotate(45deg);
+    visibility: visible;
+    width: 24px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border-top: solid 4px g.$cBlack;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .drawer::before,
+  .drawer::after {
+    content: "";
+    display: block;
+    width: 24px;
+    background: #000;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.5s;
+  }
+
+  .drawer::before {
+    top: 6px;
+  }
+
+  .drawer::after {
+    top: 15px;
+  }
+
+  .header_nav {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background: #fff;
+    text-align: center;
+  }
+
+  header .header_nav ul {
+    display: block;
+    margin: 25% 0;
+  }
+
+  header .header_nav ul li {
+    margin: 5% auto;
+    border-right: unset;
+  }
+
+  header .header_nav ul li a {
+    line-height: 3;
+    font-size: 1.75rem;
+  }
+
+  body.nav-open header .drawer {
+    border-top: 0;
+  }
+
+  body.nav-open header .drawer::before {
+    top: 9px;
+    transform: rotate(-45deg);
+  }
+
+  body.nav-open header .drawer::after {
+    top: 9px;
+    transform: rotate(45deg);
+  }
+
+  .top_img {
+    height: 50vh;
+    width: 100%;
+    background-position: center;
+    object-fit: cover;
+  }
+
+  .inner {
+    width: 75%;
+  }
+
+  .vision {
+    display: block;
+  }
+
+  .vision_left {
+    width: 90%;
+  }
+
+  .vision_right {
+    width: 90%;
+  }
+
+  .vision_ttl {
+    text-align: start;
+  }
+
+  .vision_ttl_lead {
+    text-align: start;
+  }
+
+  .vision_desc {
+    text-align: start;
+    margin-left: 0%;
+  }
+
+  .vision_left_txt {
+    display: flex;
+    line-height: 1rem;
+
+    small {
+      border-left: solid 3px;
+      margin-right: 2%;
     }
 
-    .top_img {
-      height: 50vh;
-      width:100%;
-      background-position: center;
-      object-fit: cover;
-    }
-
-    .inner{
-      width: 75%;
-    }
-
-    .vision{
-      display: block;
-    }
-
-    .vision_left{
-      width: 90%;
-    }
-
-    .vision_right{
-      width: 90%;
-    }
-
-    .vision_ttl{
-      text-align: start;
-    }
-
-    .vision_ttl_lead{
-      text-align: start;
-    }
-
-    .vision_desc{
-      text-align: start;
-      margin-left: 0%;
-    }
-
-    .vision_left_txt {
-      display: flex;
-      line-height: 1rem;
-      small {
-        border-left: solid 3px;
-        margin-right: 2%;
-      }
-    
-    .vision_left_txt p{
+    .vision_left_txt p {
       width: 10%;
     }
   }
 
-  .service_sub_ttl{
+  .service_sub_ttl {
     margin-top: 6%;
   }
 
-  .service_descript, .service_descript2{
+  .service_descript,
+  .service_descript2 {
     width: 80%;
   }
 
@@ -816,15 +829,15 @@ header .drawer {
   .service_img2 {
     margin-top: 65%;
     height: 15vh;
-      width: 100%;
-      margin-left: 0;
+    width: 100%;
+    margin-left: 0;
   }
 
   .service_img3 {
     margin-top: 65%;
     height: 15vh;
-      width: 100%;
-      margin-left: 0;
+    width: 100%;
+    margin-left: 0;
   }
 
   .text_box1 {
@@ -837,9 +850,9 @@ header .drawer {
   .text_box2 {
     top: 57%;
     height: 20vh;
-      width: 75%;
-      margin-left: 12.5%;
-      left: 0;
+    width: 75%;
+    margin-left: 12.5%;
+    left: 0;
   }
 
   .text_box3 {
@@ -866,43 +879,43 @@ header .drawer {
     height: 0;
   }
 
-  #about{
+  #about {
     margin-top: 70%;
   }
 
-  .about_item{
+  .about_item {
     width: 95%;
     font-size: 8px;
   }
 
-  .question{
+  .question {
     font-size: 8px;
   }
 
-  .accordion-area li{
+  .accordion-area li {
     margin-top: 0;
   }
 
-  .contact_box{
+  .contact_box {
     display: block;
   }
 
-  .contact_form_box2{
+  .contact_form_box2 {
     width: 100%;
     margin-top: 2%;
   }
 
-  .contact_form_ttl{
+  .contact_form_ttl {
     width: 100%;
     margin-left: 0;
   }
 
-  .contact_txtarea{
+  .contact_txtarea {
     width: 100%;
     margin-top: 2%;
   }
 
-  .contact_btn{
+  .contact_btn {
     width: 25%;
     font-size: 12px;
     margin-top: 10%;
