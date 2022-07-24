@@ -34,14 +34,14 @@ ScrollReveal().reveal('.up', {
 
 // FAQ
 $('.question').on('click', function () {
-  $('.answer').slideUp(500);
+  $('.answer').slideUp(400);
   var findElm = $(this).next(".answer");
   if ($(this).hasClass('close')) {
     $(this).removeClass('close');
     } else {
     $('.close').removeClass('close');
     $(this).addClass('close');
-    $(findElm).slideDown(500);
+    $(findElm).slideDown(400);
   }
 });
 

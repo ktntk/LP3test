@@ -2,10 +2,11 @@
 
 @mixin title {
   font-size: 2rem;
-  font-weight: bold;
-  letter-spacing: 0.2rem;
+  font-weight: normal;
+  letter-spacing: 0.1rem;
   text-align: center;
   margin-bottom: 5%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 @mixin serviceBg {
@@ -20,6 +21,8 @@
 @mixin imgSize{
   width: 50%;
   height: 40vh;
+  background-position: center;
+  object-fit: cover;
 }
 
 @mixin serviceBox{
